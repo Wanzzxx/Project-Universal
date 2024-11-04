@@ -30,24 +30,6 @@ _G.CircleFilled = false
 _G.CircleVisible = true
 _G.CircleThickness = 1  -- Ensure thickness is not zero for visibility
 
-Tab:AddToggle({
-	Name = "This is a toggle!",
-	Default = false,
-	Callback = function(Value)
-		_G.AimBotEnabled = Value
-_G.TeamCheck = Value
-_G.AimPart = Value
-_G.Sensitivity = Value
-_G.CircleSides = Value
-_G.CircleColor = Value
-_G.CircleTransparency = Value
-_G.CircleRadius = Value
-_G.CircleFilled = Value
-_G.CircleVisible = Value
-_G.CircleThickness = Value
-end    
-})
-
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Filled = _G.CircleFilled
 FOVCircle.Color = _G.CircleColor
@@ -56,6 +38,24 @@ FOVCircle.Radius = _G.CircleRadius
 FOVCircle.Transparency = _G.CircleTransparency
 FOVCircle.NumSides = _G.CircleSides
 FOVCircle.Thickness = _G.CircleThickness
+
+AimTab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		_G.AimBotEnabled = Value
+                _G.TeamCheck = Value
+                _G.AimPart = Value
+                _G.Sensitivity = Value
+                _G.CircleSides = Value
+                _G.CircleColor = Value
+                _G.CircleTransparency = Value
+                _G.CircleRadius = Value
+                _G.CircleFilled = Value
+                _G.CircleVisible = Value
+                _G.CircleThickness = Value
+end    
+})
 
 local function GetClosestPlayer()
     local MaximumDistance = _G.CircleRadius
