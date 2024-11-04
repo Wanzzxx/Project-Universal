@@ -1,12 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
-local Tab = Window:MakeTab({
-	Name = "Tab 1",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
+-- local
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
@@ -38,24 +30,6 @@ FOVCircle.Radius = _G.CircleRadius
 FOVCircle.Transparency = _G.CircleTransparency
 FOVCircle.NumSides = _G.CircleSides
 FOVCircle.Thickness = _G.CircleThickness
-
-AimTab:AddToggle({
-	Name = "This is a toggle!",
-	Default = false,
-	Callback = function(Value)
-		_G.AimBotEnabled = Value
-                _G.TeamCheck = Value
-                _G.AimPart = Value
-                _G.Sensitivity = Value
-                _G.CircleSides = Value
-                _G.CircleColor = Value
-                _G.CircleTransparency = Value
-                _G.CircleRadius = Value
-                _G.CircleFilled = Value
-                _G.CircleVisible = Value
-                _G.CircleThickness = Value
-end    
-})
 
 local function GetClosestPlayer()
     local MaximumDistance = _G.CircleRadius
