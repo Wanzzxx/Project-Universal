@@ -1,14 +1,71 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Wanz Hub | Universal 🌌", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Wanz Hub | Universal 🌌", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Yokoso, Watashi No Soul Society", IntroIcon = "rbxassetid://18539476040",})
+
+Tab:AddLabel("AimBot")
+
 local Tab = Window:MakeTab({
-	Name = "Universal Script",
+	Name = "Script Made By Me",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 Tab:AddButton({
-	Name = "OP AIMBOT (FPS GAME RECOMMEND)",
+	Name = "AIMBOT [100% Lock Head]",
 	Callback = function()
       	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "+50 Walkspeed",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+  	end    
+})
+
+Tab:AddButton({
+	Name = "+100 Walkspeed",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+  	end    
+})
+
+Tab:AddButton({
+	Name = "+50 JumpPower",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+  	end    
+})
+
+Tab:AddButton({
+	Name = "+50 JumpPower",
+	Callback = function()
+      	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+  	end    
+
+local Tab = Window:MakeTab({
+	Name = "Other Script",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Fly Gui",
+	Callback = function()
+      	loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Mobile SimpleSpy",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Dex Explorer No Key",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/DEX-Explorer/main/Mobile.lua"))()
   	end    
 })
