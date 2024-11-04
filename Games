@@ -7,10 +7,16 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "AIMBOT [100% Lock Head]",
+	Name = "AIMBOT By Me [100% Lock Head]",
 	Callback = function()
       	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
   	end    
+})
+
+Tab:AddButton({
+	Name = "Stat Grinding Simulator 3 Script [Only]",
+	Callback = function()
+      	loadstring(game:httpget('https://raw.githubusercontent.com/Wanzzxx/Stat-Grinding-Simulator-3/main/V2'))()
 })
 
 Tab:AddButton({
