@@ -1,8 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Wanz Hub | Universal 🌌", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Yokoso, Watashi No Soul Society", IntroIcon = "rbxassetid://18539476040",})
-
-Tab:AddLabel("AimBot")
-
 local Tab = Window:MakeTab({
 	Name = "Script Made By Me",
 	Icon = "rbxassetid://4483345998",
@@ -42,6 +39,7 @@ Tab:AddButton({
 	Callback = function()
       	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
   	end    
+})
 
 local Tab = Window:MakeTab({
 	Name = "Other Script",
