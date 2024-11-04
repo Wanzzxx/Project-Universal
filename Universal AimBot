@@ -1,1 +1,104 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Tab 1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Holding = false
+
+-- Values
+_G.AimBotEnabled = true
+_G.TeamCheck = false
+_G.AimPart = "Head"
+_G.Sensitivity = 0.1  -- Adjust this as needed for smoothness
+
+-- Circle Aim
+_G.CircleSides = 64
+_G.CircleColor = Color3.fromRGB(186, 85, 211)
+_G.CircleTransparency = 0.7
+_G.CircleRadius = 80
+_G.CircleFilled = false
+_G.CircleVisible = true
+_G.CircleThickness = 1  -- Ensure thickness is not zero for visibility
+
+local FOVCircle = Drawing.new("Circle")
+FOVCircle.Filled = _G.CircleFilled
+FOVCircle.Color = _G.CircleColor
+FOVCircle.Visible = _G.CircleVisible
+FOVCircle.Radius = _G.CircleRadius
+FOVCircle.Transparency = _G.CircleTransparency
+FOVCircle.NumSides = _G.CircleSides
+FOVCircle.Thickness = _G.CircleThickness
+
+local function GetClosestPlayer()
+    local MaximumDistance = _G.CircleRadius
+    local Target = nil
+
+    for _, v in next, Players:GetPlayers() do
+        if v.Name ~= LocalPlayer.Name then
+            if _G.TeamCheck == false or v.Team ~= LocalPlayer.Team then
+                if v.Character and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+                    local ScreenPoint = Camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                    local VectorDistance = (Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2) - Vector2.new(ScreenPoint.X, ScreenPoint.Y)).Magnitude
+                    if VectorDistance < MaximumDistance then
+                        MaximumDistance = VectorDistance
+                        Target = v
+                    end
+                end
+            end
+        end
+    end
+    return Target
+end
+
+-- Handle Touch Input
+UserInputService.TouchStarted:Connect(function()
+    Holding = true
+end)
+
+UserInputService.TouchEnded:Connect(function()
+    Holding = false
+end)
+
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		_G.AimBotEnabled = Value
+_G.TeamCheck = Value
+_G.AimPart = Value
+_G.Sensitivity = Value
+	end    
+})
+
+RunService.RenderStepped:Connect(function()
+    -- Update FOV circle position to stay in the center of the screen
+    FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+    FOVCircle.Filled = _G.CircleFilled
+    FOVCircle.Color = _G.CircleColor
+    FOVCircle.Visible = _G.CircleVisible
+    FOVCircle.Radius = _G.CircleRadius
+    FOVCircle.Transparency = _G.CircleTransparency
+    FOVCircle.NumSides = _G.CircleSides
+    FOVCircle.Thickness = _G.CircleThickness
+
+    if Holding and _G.AimBotEnabled then
+        local target = GetClosestPlayer()
+        if target and target.Character:FindFirstChild(_G.AimPart) then
+            -- Tween the camera to the target's head position
+            TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
+                CFrame = CFrame.new(Camera.CFrame.Position, target.Character[_G.AimPart].Position)
+            }):Play()
+        end
+    end
+end)
 
