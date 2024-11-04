@@ -17,6 +17,7 @@ Tab:AddButton({
 	Name = "Stat Grinding Simulator 3 Script [Only]",
 	Callback = function()
       	loadstring(game:httpget('https://raw.githubusercontent.com/Wanzzxx/Stat-Grinding-Simulator-3/main/V2'))()
+        end
 })
 
 Tab:AddButton({
