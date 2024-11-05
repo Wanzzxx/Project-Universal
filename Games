@@ -6,8 +6,10 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+-- Value
 _G.AimLock = true
 
+-- Function
 function AimLock()
 while _G.AimLock == true do
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
@@ -16,7 +18,7 @@ end
 end
 
 FarmingTab:AddToggle({
-	Name = "Auto Collect Achievement 🏆",
+	Name = "AimBot [100% Head]",
 	Default = false,
 	Callback = function(Value)
 	    _G.AimLock = Value
