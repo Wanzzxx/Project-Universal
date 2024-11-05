@@ -11,6 +11,7 @@ Tab:AddButton({
 	Name = "AIMBOT 100% HEADSHOT [FPS GAME]",
 	Callback = function()
       	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
+end
 })
 
 Tab:AddButton({
