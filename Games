@@ -17,34 +17,7 @@ Tab:AddButton({
 	Name = "Stat Grinding Simulator 3 Script [Only]",
 	Callback = function()
       	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Stat-Grinding-Simulator-3/main/V2')))()
-})
-
-Tab:AddButton({
-	Name = "+50 Walkspeed",
-	Callback = function()
-      	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
-  	end    
-})
-
-Tab:AddButton({
-	Name = "+100 Walkspeed",
-	Callback = function()
-      	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
-  	end    
-})
-
-Tab:AddButton({
-	Name = "+50 JumpPower",
-	Callback = function()
-      	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-  	end    
-})
-
-Tab:AddButton({
-	Name = "+50 JumpPower",
-	Callback = function()
-      	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-  	end    
+end
 })
 
 local Tab = Window:MakeTab({
