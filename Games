@@ -23,7 +23,7 @@ FarmingTab:AddToggle({
 	Callback = function(Value)
 	    _G.AimLock = Value
              AimLock()
-	
+	end
 })
 
 Tab:AddButton({
