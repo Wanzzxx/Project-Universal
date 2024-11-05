@@ -1,13 +1,13 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Wanz Hub | Universal 🌌", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Yokoso, Watashi No Soul Society", IntroIcon = "rbxassetid://18539476040",})
+local Window = OrionLib:MakeWindow({Name = "Waizen Hub | Universal 🌌", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Yokoso, Watashi No Soul Society", IntroIcon = "rbxassetid://18539476040",})
 local Tab = Window:MakeTab({
-	Name = "Script Made By Me",
+	Name = "Made By Me",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 Tab:AddButton({
-	Name = "AIMBOT By Me [100% Lock Head]",
+	Name = "AIMBOT [100% Lock Head]",
 	Callback = function()
       	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
   	end    
