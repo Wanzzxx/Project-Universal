@@ -7,24 +7,10 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
--- Value
-_G.AimLock = true
-
--- Function
-function AimLock()
-while _G.AimLock == true do
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
-wait()
-end
-end
-
-Tab:AddToggle({
-	Name = "AimBot [100% Head]",
-	Default = false,
-	Callback = function(Value)
-	    _G.AimLock = Value
-             AimLock()
-	end
+Tab:AddButton({
+	Name = "AIMBOT 100% HEADSHOT [FPS GAME]",
+	Callback = function()
+      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wanzzxx/Project-Universal/main/Universal%20AimBot')))()
 })
 
 Tab:AddButton({
